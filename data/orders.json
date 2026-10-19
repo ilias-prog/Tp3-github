@@ -1,0 +1,90 @@
+[
+    {
+        "id": 101,
+        "client": "Sara",
+        "table": 4,
+        "items": ["Tajine poulet", "Salade marocaine", "Thé à la menthe"],
+        "amount": 145,
+        "status": "Servie",
+        "paid": true,
+        "date": "2026-10-17",
+        "description": "Déjeuner en terrasse."
+    },
+    {
+        "id": 102,
+        "client": "Yassine",
+        "table": 2,
+        "items": ["Couscous royal", "Jus d'orange"],
+        "amount": 130,
+        "status": "En préparation",
+        "paid": false,
+        "date": "2026-10-17",
+        "description": "Sans raisins secs."
+    },
+    {
+        "id": 103,
+        "client": "Amine",
+        "table": 7,
+        "items": ["Pastilla fruits de mer", "Eau minérale"],
+        "amount": 165,
+        "status": "Prête",
+        "paid": true,
+        "date": "2026-10-17",
+        "description": "Commande prête à être servie."
+    },
+    {
+        "id": 104,
+        "client": "Salma",
+        "table": 1,
+        "items": ["Harira", "Briouates fromage"],
+        "amount": 68,
+        "status": "Annulée",
+        "paid": false,
+        "date": "2026-10-16",
+        "description": "Annulée à la demande du client."
+    },
+    {
+        "id": 105,
+        "client": "Omar",
+        "table": 5,
+        "items": ["Brochettes mixtes", "Frites maison", "Soda"],
+        "amount": 120,
+        "status": "En préparation",
+        "paid": true,
+        "date": "2026-10-17",
+        "description": "Cuisson à point."
+    },
+    {
+        "id": 106,
+        "client": "Imane",
+        "table": 3,
+        "items": ["Tajine kefta", "Salade marocaine", "Eau minérale"],
+        "amount": 112,
+        "status": "Servie",
+        "paid": true,
+        "date": "2026-10-16",
+        "description": "Service terminé."
+    },
+    {
+        "id": 107,
+        "client": "Mehdi",
+        "table": 8,
+        "items": ["Tanjia marrakchia", "Thé à la menthe"],
+        "amount": 138,
+        "status": "Servie",
+        "paid": true,
+        "date": "2026-10-16",
+        "description": "Spécialité du chef."
+    },
+    {
+        "id": 108,
+        "client": "Nora",
+        "table": 6,
+        "items": ["Salade niçoise", "Jus d'orange"],
+        "amount": 95,
+        "status": "Prête",
+        "paid": false,
+        "date": "2026-10-17",
+        "description": "En attente de service à table."
+    }
+]

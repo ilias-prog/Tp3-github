@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="page-header py-4">
+        <div class="container">
+            <h1 class="fw-bold mb-1">Gestion du restaurant</h1>
+            <p class="text-muted mb-0">Suivi des commandes, des tables et des paiements</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section class="row g-3 mb-4">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <p class="text-muted mb-1">Commandes du jour</p>
+                    <h2 id="totalOrders" class="h3 stat-value mb-0">0</h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <p class="text-muted mb-1">Servies</p>
+                    <h2 id="deliveredOrders" class="h3 stat-value mb-0">0</h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <p class="text-muted mb-1">Payées</p>
+                    <h2 id="paidOrders" class="h3 stat-value mb-0">0</h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <p class="text-muted mb-1">Chiffre d'affaires</p>
+                    <h2 id="totalAmount" class="h3 stat-value mb-0">0 DH</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="filter-panel mb-4">
+            <label for="searchInput" class="form-label fw-semibold">Rechercher une commande</label>
+            <input type="text" id="searchInput" class="form-control mb-3" placeholder="Client, plat ou numéro de table">
+
+            <p class="fw-semibold mb-2">État de la commande</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+                <button id="btnAll" class="btn btn-filter active">Toutes</button>
+                <button class="btn btn-filter status-btn" data-status="En préparation">En préparation</button>
+                <button class="btn btn-filter status-btn" data-status="Prête">Prêtes</button>
+                <button class="btn btn-filter status-btn" data-status="Servie">Servies</button>
+                <button class="btn btn-filter status-btn" data-status="Annulée">Annulées</button>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" id="paidOnly" class="form-check-input">
+                <label for="paidOnly" class="form-check-label">Afficher uniquement les commandes payées</label>
+            </div>
+        </section>
+
+        <section class="orders-panel">
+            <p id="resultCount" class="text-muted">Chargement...</p>
+            <div id="errorMessage" class="alert alert-danger d-none">
+                Impossible de charger les commandes.
+            </div>
+            <div class="table-responsive">
+                <table class="table align-middle bg-white">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Client</th>
+                            <th>Table</th>
+                            <th>Plats commandés</th>
+                            <th>Total</th>
+                            <th>État</th>
+                            <th>Paiement</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle" class="modal-title fs-5">Détail de la commande</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Client :</strong> <span id="modalClient"></span></p>
+                    <p><strong>Table :</strong> <span id="modalTable"></span></p>
+                    <p><strong>Plats :</strong> <span id="modalItems"></span></p>
+                    <p><strong>Total :</strong> <span id="modalAmount"></span></p>
+                    <p><strong>État :</strong> <span id="modalStatus"></span></p>
+                    <p><strong>Paiement :</strong> <span id="modalPayment"></span></p>
+                    <p><strong>Date :</strong> <span id="modalDate"></span></p>
+                    <p class="mb-0"><strong>Note :</strong> <span id="modalDescription" class="text-muted"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
